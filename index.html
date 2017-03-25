@@ -1,0 +1,190 @@
+<html>
+<head>
+  <title>My Portfolio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 40;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar {
+    float: right;
+}
+
+.navlink {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navlink:hover {
+    background-color: #111;
+}
+tr{
+  text-align: center;
+}
+table, td, th{
+  border: 2px solid black;
+}
+</style>
+<script type="text/javascript">
+function validateForm() {
+  var x = document.forms["myForm"]["name"].value;
+      if (x == "") {
+          alert("Name must be filled out");
+          return false;
+      }
+  var y = document.forms["myForm"]["pno"].value;
+          if (y.length != 10) {
+              alert("Invalid Number");
+              return false;
+          }
+          var emailID = document.myForm.email.value;
+                 atpos = emailID.indexOf("@");
+                 dotpos = emailID.lastIndexOf(".");
+
+                 if (atpos < 1 || ( dotpos - atpos < 2 ))
+                 {
+                    alert("Please enter correct email ID")
+                    document.myForm.EMail.focus() ;
+                    return false;
+                 }
+                 return( true );
+
+}
+    </script>
+    <script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+</script>
+</head>
+<body style="margin: 0; background-color: #b2ebf2">
+  <ul id="nav">
+    <b><li class="navbar" style="float: left; color: white; padding-top: 15px">My Portfolio</li></b>
+    <li class="navbar"><a class="navlink" href="#contact">Contact</a></li>
+    <li class="navbar"><a class="navlink" href="#experience">Experience</a></li>
+    <li class="navbar"><a class="navlink" href="#about">About</a></li>
+    <li class="navbar"><a class="active navlink" href="#home">Home</a></li>
+</ul>
+<section id="home" style="width: 100%; height: 700px;background-image:url('dev.jpeg'); background-size: cover; background-repeat: no-repeat; opacity: 0.8">
+  <center><h1 style="margin-top:0; padding-top: 20%; color: white; font-family: Roboto; font-size: 50px"> Hello! I'm a Web Developer </h1></center>
+</section>
+<section id="about" style="height: 500px">
+  <center><h1 style="font-size: 30px">About Me</h1></center>
+  <br>
+  <div style="float: left; width: 40%; height: 60%">
+  <img src="me.jpg" style="padding-left: 25%">
+</div>
+<div style="float: left; width: 60%">
+  <p style="font-size: 20px"><b>Interests</b><br>
+I have knowledge in web development and designing. Other interests include cricket and music. I do record music covers whenever free.</p>
+<p style="font-sizE: 20px">
+  <b>Skills</b>
+  <ol>
+    <li><b>Technical</b>
+<ul>
+  <li> Web Dev</li>
+  <li> Digital Marketing </li>
+</ul>
+</li>
+<br>
+<li><b> Non-Technical</b>
+  <ul>
+    <li>Singing</li>
+    <li>Cricket</li>
+  </ul>
+</li>
+</ol>
+</p>
+</div>
+</section>
+
+<section id="experience" style="height: 400px">
+  <center><h1 style="font-size: 30px">Experience</h1></center>
+  <br>
+<center>
+  <table style="width: 40%">
+  <tr>
+    <th>Time</th>
+    <th>Institute/Club</th>
+    <th>Designation</th>
+  </tr>
+  <tr>
+    <td>2001-2015</td>
+    <td>ABPS, Kesrol</td>
+    <td>Student</td>
+  </tr>
+  <tr>
+    <td>2015-Present</td>
+    <td>VIT University</td>
+    <td>Student</td>
+  </tr>
+  <tr>
+    <td>2016-Present</td>
+    <td>TAG Club</td>
+    <td>Core Committee Member</td>
+  </tr>
+  <tr>
+    <td>2017-Present</td>
+    <td>Creation Labs</td>
+    <td>Web Developer</td>
+  </tr>
+</table>
+</center>
+</section>
+<section id="contact" style="height: 500px">
+  <center><h1 style="font-size: 30px">Contact Me</h1></center>
+  <br>
+  <div style="display: inline-block; padding-left: 25%; float: left; width: 30%; height: 60%; font-size: 20px">
+  <p><b>
+    Let's Connect
+  </b></p>
+  <ul>
+    <li>+91 9790014175</li>
+    <li>jfojdar11@gmail.com</li>
+    <li><a href="https://www.facebook.com/tagvitu/?fref=ts" target="_blank" class="fb">Facebook</a></li>
+  <li><a href="https://github.com/JaiminF" target="_blank" class="github">GitHub</a></li>
+  </ul>
+</div>
+<div style="display: inline-block; float: left; width: 30%">
+    <form name="myForm" style="font-size: 20px" action="" onsubmit="return validateForm()">
+      Name:<br>
+  <input type="text" id="name">
+  <br><br>
+  Phone Number:<br>
+  <input type="number" name="pno">
+  <br><br>
+  Email:<br>
+  <input type="email" name="email">
+  <br><br>
+  Message:<br>
+  <textarea type="text" name="msg"></textarea>
+
+        <br><br>
+        <button style="width: 70px; border-radius: 20px; background-color: white; color: black" type="submit">Send</button>
+    </form>
+</div>
+</section>
+<footer>
+  <div class="">
+    <center>
+    <div id="flip" style="background-color: #212121; color: white; height: 40px; padding-bottom: 10px; padding-top: 20px;">
+     &copy Copyright Jaimin Fojdar
+    </div>
+    <div id="panel" style="font-size: 30px; background-color: #212121; color: white; height: 40px; padding-bottom: 10px; padding-top: 20px;"> Yes! I have my own copyright :P</div>
+  </center>
+  </div>
+</footer>
+
+
+</body>
+</html>
